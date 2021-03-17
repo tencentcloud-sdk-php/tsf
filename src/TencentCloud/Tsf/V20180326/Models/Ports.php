@@ -18,28 +18,28 @@ namespace TencentCloud\Tsf\V20180326\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * 环境变量
+ * 服务端口
  *
- * @method string getName() 获取环境变量名称
- * @method void setName(string $Name) 设置环境变量名称
- * @method string getValue() 获取环境变量值
- * @method void setValue(string $Value) 设置环境变量值
+ * @method integer getTargetPort() 获取服务端口
+ * @method void setTargetPort(integer $TargetPort) 设置服务端口
+ * @method string getProtocol() 获取端口协议
+ * @method void setProtocol(string $Protocol) 设置端口协议
  */
-class Env extends AbstractModel
+class Ports extends AbstractModel
 {
     /**
-     * @var string 环境变量名称
+     * @var integer 服务端口
      */
-    public $Name;
+    public $TargetPort;
 
     /**
-     * @var string 环境变量值
+     * @var string 端口协议
      */
-    public $Value;
+    public $Protocol;
 
     /**
-     * @param string $Name 环境变量名称
-     * @param string $Value 环境变量值
+     * @param integer $TargetPort 服务端口
+     * @param string $Protocol 端口协议
      */
     function __construct()
     {
@@ -54,12 +54,12 @@ class Env extends AbstractModel
         if ($param === null) {
             return;
         }
-        if (array_key_exists("Name",$param) and $param["Name"] !== null) {
-            $this->Name = $param["Name"];
+        if (array_key_exists("TargetPort",$param) and $param["TargetPort"] !== null) {
+            $this->TargetPort = $param["TargetPort"];
         }
 
-        if (array_key_exists("Value",$param) and $param["Value"] !== null) {
-            $this->Value = $param["Value"];
+        if (array_key_exists("Protocol",$param) and $param["Protocol"] !== null) {
+            $this->Protocol = $param["Protocol"];
         }
     }
 }

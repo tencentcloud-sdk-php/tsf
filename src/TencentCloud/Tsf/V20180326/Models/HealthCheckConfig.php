@@ -18,28 +18,24 @@ namespace TencentCloud\Tsf\V20180326\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * 环境变量
+ * 健康检查配置
  *
- * @method string getName() 获取环境变量名称
- * @method void setName(string $Name) 设置环境变量名称
- * @method string getValue() 获取环境变量值
- * @method void setValue(string $Value) 设置环境变量值
+ * @method string getPath() 获取健康检查路径
+注意：此字段可能返回 null，表示取不到有效值。
+ * @method void setPath(string $Path) 设置健康检查路径
+注意：此字段可能返回 null，表示取不到有效值。
  */
-class Env extends AbstractModel
+class HealthCheckConfig extends AbstractModel
 {
     /**
-     * @var string 环境变量名称
+     * @var string 健康检查路径
+注意：此字段可能返回 null，表示取不到有效值。
      */
-    public $Name;
+    public $Path;
 
     /**
-     * @var string 环境变量值
-     */
-    public $Value;
-
-    /**
-     * @param string $Name 环境变量名称
-     * @param string $Value 环境变量值
+     * @param string $Path 健康检查路径
+注意：此字段可能返回 null，表示取不到有效值。
      */
     function __construct()
     {
@@ -54,12 +50,8 @@ class Env extends AbstractModel
         if ($param === null) {
             return;
         }
-        if (array_key_exists("Name",$param) and $param["Name"] !== null) {
-            $this->Name = $param["Name"];
-        }
-
-        if (array_key_exists("Value",$param) and $param["Value"] !== null) {
-            $this->Value = $param["Value"];
+        if (array_key_exists("Path",$param) and $param["Path"] !== null) {
+            $this->Path = $param["Path"];
         }
     }
 }
