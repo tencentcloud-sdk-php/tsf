@@ -18,32 +18,36 @@ namespace TencentCloud\Tsf\V20180326\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * CreateCluster返回参数结构体
+ * 文件配置项发布信息列表
  *
- * @method string getResult() 获取集群ID
+ * @method integer getTotalCount() 获取数量
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setResult(string $Result) 设置集群ID
+ * @method void setTotalCount(integer $TotalCount) 设置数量
 注意：此字段可能返回 null，表示取不到有效值。
- * @method string getRequestId() 获取唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
- * @method void setRequestId(string $RequestId) 设置唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+ * @method array getContent() 获取列表
+注意：此字段可能返回 null，表示取不到有效值。
+ * @method void setContent(array $Content) 设置列表
+注意：此字段可能返回 null，表示取不到有效值。
  */
-class CreateClusterResponse extends AbstractModel
+class TsfPageFileConfigRelease extends AbstractModel
 {
     /**
-     * @var string 集群ID
+     * @var integer 数量
 注意：此字段可能返回 null，表示取不到有效值。
      */
-    public $Result;
+    public $TotalCount;
 
     /**
-     * @var string 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
-     */
-    public $RequestId;
-
-    /**
-     * @param string $Result 集群ID
+     * @var array 列表
 注意：此字段可能返回 null，表示取不到有效值。
-     * @param string $RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+     */
+    public $Content;
+
+    /**
+     * @param integer $TotalCount 数量
+注意：此字段可能返回 null，表示取不到有效值。
+     * @param array $Content 列表
+注意：此字段可能返回 null，表示取不到有效值。
      */
     function __construct()
     {
@@ -58,12 +62,17 @@ class CreateClusterResponse extends AbstractModel
         if ($param === null) {
             return;
         }
-        if (array_key_exists("Result",$param) and $param["Result"] !== null) {
-            $this->Result = $param["Result"];
+        if (array_key_exists("TotalCount",$param) and $param["TotalCount"] !== null) {
+            $this->TotalCount = $param["TotalCount"];
         }
 
-        if (array_key_exists("RequestId",$param) and $param["RequestId"] !== null) {
-            $this->RequestId = $param["RequestId"];
+        if (array_key_exists("Content",$param) and $param["Content"] !== null) {
+            $this->Content = [];
+            foreach ($param["Content"] as $key => $value){
+                $obj = new FileConfigRelease();
+                $obj->deserialize($value);
+                array_push($this->Content, $obj);
+            }
         }
     }
 }

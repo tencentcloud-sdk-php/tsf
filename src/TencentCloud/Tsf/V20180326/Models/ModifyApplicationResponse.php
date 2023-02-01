@@ -18,19 +18,19 @@ namespace TencentCloud\Tsf\V20180326\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * CreateCluster返回参数结构体
+ * ModifyApplication返回参数结构体
  *
- * @method string getResult() 获取集群ID
+ * @method boolean getResult() 获取true/false
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setResult(string $Result) 设置集群ID
+ * @method void setResult(boolean $Result) 设置true/false
 注意：此字段可能返回 null，表示取不到有效值。
  * @method string getRequestId() 获取唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
  * @method void setRequestId(string $RequestId) 设置唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
  */
-class CreateClusterResponse extends AbstractModel
+class ModifyApplicationResponse extends AbstractModel
 {
     /**
-     * @var string 集群ID
+     * @var boolean true/false
 注意：此字段可能返回 null，表示取不到有效值。
      */
     public $Result;
@@ -41,7 +41,7 @@ class CreateClusterResponse extends AbstractModel
     public $RequestId;
 
     /**
-     * @param string $Result 集群ID
+     * @param boolean $Result true/false
 注意：此字段可能返回 null，表示取不到有效值。
      * @param string $RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
      */
