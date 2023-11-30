@@ -20,18 +20,18 @@ use TencentCloud\Common\AbstractModel;
 /**
  * DescribeConfigTemplate请求参数结构体
  *
- * @method string getConfigTemplateId() 获取无
- * @method void setConfigTemplateId(string $ConfigTemplateId) 设置无
+ * @method string getConfigTemplateId() 获取配置模板Id
+ * @method void setConfigTemplateId(string $ConfigTemplateId) 设置配置模板Id
  */
 class DescribeConfigTemplateRequest extends AbstractModel
 {
     /**
-     * @var string 无
+     * @var string 配置模板Id
      */
     public $ConfigTemplateId;
 
     /**
-     * @param string $ConfigTemplateId 无
+     * @param string $ConfigTemplateId 配置模板Id
      */
     function __construct()
     {
