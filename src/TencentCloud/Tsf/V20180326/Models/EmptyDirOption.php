@@ -18,47 +18,59 @@ namespace TencentCloud\Tsf\V20180326\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * 应用分页信息
+ * 空目录选项
  *
- * @method integer getTotalCount() 获取应用总数目
+ * @method boolean getEnableMemory() 获取-
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setTotalCount(integer $TotalCount) 设置应用总数目
+ * @method void setEnableMemory(boolean $EnableMemory) 设置-
 注意：此字段可能返回 null，表示取不到有效值。
- * @method array getContent() 获取应用信息列表
+ * @method integer getStorageCapacity() 获取-
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setContent(array $Content) 设置应用信息列表
+ * @method void setStorageCapacity(integer $StorageCapacity) 设置-
 注意：此字段可能返回 null，表示取不到有效值。
- * @method integer getSpecTotalCount() 获取获取部署组实例列表返回的原始批次个数
+ * @method string getStorageUnit() 获取-
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setSpecTotalCount(integer $SpecTotalCount) 设置获取部署组实例列表返回的原始批次个数
+ * @method void setStorageUnit(string $StorageUnit) 设置-
+注意：此字段可能返回 null，表示取不到有效值。
+ * @method string getSizeLimit() 获取-
+注意：此字段可能返回 null，表示取不到有效值。
+ * @method void setSizeLimit(string $SizeLimit) 设置-
 注意：此字段可能返回 null，表示取不到有效值。
  */
-class TsfPageApplication extends AbstractModel
+class EmptyDirOption extends AbstractModel
 {
     /**
-     * @var integer 应用总数目
+     * @var boolean -
 注意：此字段可能返回 null，表示取不到有效值。
      */
-    public $TotalCount;
+    public $EnableMemory;
 
     /**
-     * @var array 应用信息列表
+     * @var integer -
 注意：此字段可能返回 null，表示取不到有效值。
      */
-    public $Content;
+    public $StorageCapacity;
 
     /**
-     * @var integer 获取部署组实例列表返回的原始批次个数
+     * @var string -
 注意：此字段可能返回 null，表示取不到有效值。
      */
-    public $SpecTotalCount;
+    public $StorageUnit;
 
     /**
-     * @param integer $TotalCount 应用总数目
+     * @var string -
 注意：此字段可能返回 null，表示取不到有效值。
-     * @param array $Content 应用信息列表
+     */
+    public $SizeLimit;
+
+    /**
+     * @param boolean $EnableMemory -
 注意：此字段可能返回 null，表示取不到有效值。
-     * @param integer $SpecTotalCount 获取部署组实例列表返回的原始批次个数
+     * @param integer $StorageCapacity -
+注意：此字段可能返回 null，表示取不到有效值。
+     * @param string $StorageUnit -
+注意：此字段可能返回 null，表示取不到有效值。
+     * @param string $SizeLimit -
 注意：此字段可能返回 null，表示取不到有效值。
      */
     function __construct()
@@ -74,21 +86,20 @@ class TsfPageApplication extends AbstractModel
         if ($param === null) {
             return;
         }
-        if (array_key_exists("TotalCount",$param) and $param["TotalCount"] !== null) {
-            $this->TotalCount = $param["TotalCount"];
+        if (array_key_exists("EnableMemory",$param) and $param["EnableMemory"] !== null) {
+            $this->EnableMemory = $param["EnableMemory"];
         }
 
-        if (array_key_exists("Content",$param) and $param["Content"] !== null) {
-            $this->Content = [];
-            foreach ($param["Content"] as $key => $value){
-                $obj = new ApplicationForPage();
-                $obj->deserialize($value);
-                array_push($this->Content, $obj);
-            }
+        if (array_key_exists("StorageCapacity",$param) and $param["StorageCapacity"] !== null) {
+            $this->StorageCapacity = $param["StorageCapacity"];
         }
 
-        if (array_key_exists("SpecTotalCount",$param) and $param["SpecTotalCount"] !== null) {
-            $this->SpecTotalCount = $param["SpecTotalCount"];
+        if (array_key_exists("StorageUnit",$param) and $param["StorageUnit"] !== null) {
+            $this->StorageUnit = $param["StorageUnit"];
+        }
+
+        if (array_key_exists("SizeLimit",$param) and $param["SizeLimit"] !== null) {
+            $this->SizeLimit = $param["SizeLimit"];
         }
     }
 }

@@ -18,47 +18,47 @@ namespace TencentCloud\Tsf\V20180326\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * 应用分页信息
+ * 打散调度规则
  *
- * @method integer getTotalCount() 获取应用总数目
+ * @method string getScatterDimension() 获取-
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setTotalCount(integer $TotalCount) 设置应用总数目
+ * @method void setScatterDimension(string $ScatterDimension) 设置-
 注意：此字段可能返回 null，表示取不到有效值。
- * @method array getContent() 获取应用信息列表
+ * @method integer getMaxUnbalanceQuantity() 获取-
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setContent(array $Content) 设置应用信息列表
+ * @method void setMaxUnbalanceQuantity(integer $MaxUnbalanceQuantity) 设置-
 注意：此字段可能返回 null，表示取不到有效值。
- * @method integer getSpecTotalCount() 获取获取部署组实例列表返回的原始批次个数
+ * @method boolean getIsForceSchedule() 获取-
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setSpecTotalCount(integer $SpecTotalCount) 设置获取部署组实例列表返回的原始批次个数
+ * @method void setIsForceSchedule(boolean $IsForceSchedule) 设置-
 注意：此字段可能返回 null，表示取不到有效值。
  */
-class TsfPageApplication extends AbstractModel
+class AvailableZoneScatterScheduleRule extends AbstractModel
 {
     /**
-     * @var integer 应用总数目
+     * @var string -
 注意：此字段可能返回 null，表示取不到有效值。
      */
-    public $TotalCount;
+    public $ScatterDimension;
 
     /**
-     * @var array 应用信息列表
+     * @var integer -
 注意：此字段可能返回 null，表示取不到有效值。
      */
-    public $Content;
+    public $MaxUnbalanceQuantity;
 
     /**
-     * @var integer 获取部署组实例列表返回的原始批次个数
+     * @var boolean -
 注意：此字段可能返回 null，表示取不到有效值。
      */
-    public $SpecTotalCount;
+    public $IsForceSchedule;
 
     /**
-     * @param integer $TotalCount 应用总数目
+     * @param string $ScatterDimension -
 注意：此字段可能返回 null，表示取不到有效值。
-     * @param array $Content 应用信息列表
+     * @param integer $MaxUnbalanceQuantity -
 注意：此字段可能返回 null，表示取不到有效值。
-     * @param integer $SpecTotalCount 获取部署组实例列表返回的原始批次个数
+     * @param boolean $IsForceSchedule -
 注意：此字段可能返回 null，表示取不到有效值。
      */
     function __construct()
@@ -74,21 +74,16 @@ class TsfPageApplication extends AbstractModel
         if ($param === null) {
             return;
         }
-        if (array_key_exists("TotalCount",$param) and $param["TotalCount"] !== null) {
-            $this->TotalCount = $param["TotalCount"];
+        if (array_key_exists("ScatterDimension",$param) and $param["ScatterDimension"] !== null) {
+            $this->ScatterDimension = $param["ScatterDimension"];
         }
 
-        if (array_key_exists("Content",$param) and $param["Content"] !== null) {
-            $this->Content = [];
-            foreach ($param["Content"] as $key => $value){
-                $obj = new ApplicationForPage();
-                $obj->deserialize($value);
-                array_push($this->Content, $obj);
-            }
+        if (array_key_exists("MaxUnbalanceQuantity",$param) and $param["MaxUnbalanceQuantity"] !== null) {
+            $this->MaxUnbalanceQuantity = $param["MaxUnbalanceQuantity"];
         }
 
-        if (array_key_exists("SpecTotalCount",$param) and $param["SpecTotalCount"] !== null) {
-            $this->SpecTotalCount = $param["SpecTotalCount"];
+        if (array_key_exists("IsForceSchedule",$param) and $param["IsForceSchedule"] !== null) {
+            $this->IsForceSchedule = $param["IsForceSchedule"];
         }
     }
 }

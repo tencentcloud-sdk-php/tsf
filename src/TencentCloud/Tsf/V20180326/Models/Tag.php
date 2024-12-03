@@ -18,23 +18,35 @@ namespace TencentCloud\Tsf\V20180326\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * TSF Envoy网关服务配置
+ * 标签
  *
- * @method string getName() 获取服务名称
+ * @method string getTagKey() 获取标签键
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setName(string $Name) 设置服务名称
+ * @method void setTagKey(string $TagKey) 设置标签键
+注意：此字段可能返回 null，表示取不到有效值。
+ * @method string getTagValue() 获取标签值
+注意：此字段可能返回 null，表示取不到有效值。
+ * @method void setTagValue(string $TagValue) 设置标签值
 注意：此字段可能返回 null，表示取不到有效值。
  */
-class GatewayConfig extends AbstractModel
+class Tag extends AbstractModel
 {
     /**
-     * @var string 服务名称
+     * @var string 标签键
 注意：此字段可能返回 null，表示取不到有效值。
      */
-    public $Name;
+    public $TagKey;
 
     /**
-     * @param string $Name 服务名称
+     * @var string 标签值
+注意：此字段可能返回 null，表示取不到有效值。
+     */
+    public $TagValue;
+
+    /**
+     * @param string $TagKey 标签键
+注意：此字段可能返回 null，表示取不到有效值。
+     * @param string $TagValue 标签值
 注意：此字段可能返回 null，表示取不到有效值。
      */
     function __construct()
@@ -50,8 +62,12 @@ class GatewayConfig extends AbstractModel
         if ($param === null) {
             return;
         }
-        if (array_key_exists("Name",$param) and $param["Name"] !== null) {
-            $this->Name = $param["Name"];
+        if (array_key_exists("TagKey",$param) and $param["TagKey"] !== null) {
+            $this->TagKey = $param["TagKey"];
+        }
+
+        if (array_key_exists("TagValue",$param) and $param["TagValue"] !== null) {
+            $this->TagValue = $param["TagValue"];
         }
     }
 }

@@ -18,47 +18,47 @@ namespace TencentCloud\Tsf\V20180326\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * 应用分页信息
+ * 亲和规则
  *
- * @method integer getTotalCount() 获取应用总数目
+ * @method string getScope() 获取-
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setTotalCount(integer $TotalCount) 设置应用总数目
+ * @method void setScope(string $Scope) 设置-
 注意：此字段可能返回 null，表示取不到有效值。
- * @method array getContent() 获取应用信息列表
+ * @method string getWeight() 获取-
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setContent(array $Content) 设置应用信息列表
+ * @method void setWeight(string $Weight) 设置-
 注意：此字段可能返回 null，表示取不到有效值。
- * @method integer getSpecTotalCount() 获取获取部署组实例列表返回的原始批次个数
+ * @method array getPaths() 获取-
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setSpecTotalCount(integer $SpecTotalCount) 设置获取部署组实例列表返回的原始批次个数
+ * @method void setPaths(array $Paths) 设置-
 注意：此字段可能返回 null，表示取不到有效值。
  */
-class TsfPageApplication extends AbstractModel
+class Affinity extends AbstractModel
 {
     /**
-     * @var integer 应用总数目
+     * @var string -
 注意：此字段可能返回 null，表示取不到有效值。
      */
-    public $TotalCount;
+    public $Scope;
 
     /**
-     * @var array 应用信息列表
+     * @var string -
 注意：此字段可能返回 null，表示取不到有效值。
      */
-    public $Content;
+    public $Weight;
 
     /**
-     * @var integer 获取部署组实例列表返回的原始批次个数
+     * @var array -
 注意：此字段可能返回 null，表示取不到有效值。
      */
-    public $SpecTotalCount;
+    public $Paths;
 
     /**
-     * @param integer $TotalCount 应用总数目
+     * @param string $Scope -
 注意：此字段可能返回 null，表示取不到有效值。
-     * @param array $Content 应用信息列表
+     * @param string $Weight -
 注意：此字段可能返回 null，表示取不到有效值。
-     * @param integer $SpecTotalCount 获取部署组实例列表返回的原始批次个数
+     * @param array $Paths -
 注意：此字段可能返回 null，表示取不到有效值。
      */
     function __construct()
@@ -74,21 +74,21 @@ class TsfPageApplication extends AbstractModel
         if ($param === null) {
             return;
         }
-        if (array_key_exists("TotalCount",$param) and $param["TotalCount"] !== null) {
-            $this->TotalCount = $param["TotalCount"];
+        if (array_key_exists("Scope",$param) and $param["Scope"] !== null) {
+            $this->Scope = $param["Scope"];
         }
 
-        if (array_key_exists("Content",$param) and $param["Content"] !== null) {
-            $this->Content = [];
-            foreach ($param["Content"] as $key => $value){
-                $obj = new ApplicationForPage();
+        if (array_key_exists("Weight",$param) and $param["Weight"] !== null) {
+            $this->Weight = $param["Weight"];
+        }
+
+        if (array_key_exists("Paths",$param) and $param["Paths"] !== null) {
+            $this->Paths = [];
+            foreach ($param["Paths"] as $key => $value){
+                $obj = new CommonOption();
                 $obj->deserialize($value);
-                array_push($this->Content, $obj);
+                array_push($this->Paths, $obj);
             }
-        }
-
-        if (array_key_exists("SpecTotalCount",$param) and $param["SpecTotalCount"] !== null) {
-            $this->SpecTotalCount = $param["SpecTotalCount"];
         }
     }
 }

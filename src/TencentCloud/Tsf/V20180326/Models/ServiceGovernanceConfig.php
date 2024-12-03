@@ -18,47 +18,47 @@ namespace TencentCloud\Tsf\V20180326\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * 应用分页信息
+ * 注册配置治理信息
  *
- * @method integer getTotalCount() 获取应用总数目
+ * @method boolean getEnableGovernance() 获取是否开启服务注册治理
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setTotalCount(integer $TotalCount) 设置应用总数目
+ * @method void setEnableGovernance(boolean $EnableGovernance) 设置是否开启服务注册治理
 注意：此字段可能返回 null，表示取不到有效值。
- * @method array getContent() 获取应用信息列表
+ * @method string getGovernanceType() 获取服务治理类型
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setContent(array $Content) 设置应用信息列表
+ * @method void setGovernanceType(string $GovernanceType) 设置服务治理类型
 注意：此字段可能返回 null，表示取不到有效值。
- * @method integer getSpecTotalCount() 获取获取部署组实例列表返回的原始批次个数
+ * @method array getExclusiveInstances() 获取独享实例列表
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setSpecTotalCount(integer $SpecTotalCount) 设置获取部署组实例列表返回的原始批次个数
+ * @method void setExclusiveInstances(array $ExclusiveInstances) 设置独享实例列表
 注意：此字段可能返回 null，表示取不到有效值。
  */
-class TsfPageApplication extends AbstractModel
+class ServiceGovernanceConfig extends AbstractModel
 {
     /**
-     * @var integer 应用总数目
+     * @var boolean 是否开启服务注册治理
 注意：此字段可能返回 null，表示取不到有效值。
      */
-    public $TotalCount;
+    public $EnableGovernance;
 
     /**
-     * @var array 应用信息列表
+     * @var string 服务治理类型
 注意：此字段可能返回 null，表示取不到有效值。
      */
-    public $Content;
+    public $GovernanceType;
 
     /**
-     * @var integer 获取部署组实例列表返回的原始批次个数
+     * @var array 独享实例列表
 注意：此字段可能返回 null，表示取不到有效值。
      */
-    public $SpecTotalCount;
+    public $ExclusiveInstances;
 
     /**
-     * @param integer $TotalCount 应用总数目
+     * @param boolean $EnableGovernance 是否开启服务注册治理
 注意：此字段可能返回 null，表示取不到有效值。
-     * @param array $Content 应用信息列表
+     * @param string $GovernanceType 服务治理类型
 注意：此字段可能返回 null，表示取不到有效值。
-     * @param integer $SpecTotalCount 获取部署组实例列表返回的原始批次个数
+     * @param array $ExclusiveInstances 独享实例列表
 注意：此字段可能返回 null，表示取不到有效值。
      */
     function __construct()
@@ -74,21 +74,21 @@ class TsfPageApplication extends AbstractModel
         if ($param === null) {
             return;
         }
-        if (array_key_exists("TotalCount",$param) and $param["TotalCount"] !== null) {
-            $this->TotalCount = $param["TotalCount"];
+        if (array_key_exists("EnableGovernance",$param) and $param["EnableGovernance"] !== null) {
+            $this->EnableGovernance = $param["EnableGovernance"];
         }
 
-        if (array_key_exists("Content",$param) and $param["Content"] !== null) {
-            $this->Content = [];
-            foreach ($param["Content"] as $key => $value){
-                $obj = new ApplicationForPage();
+        if (array_key_exists("GovernanceType",$param) and $param["GovernanceType"] !== null) {
+            $this->GovernanceType = $param["GovernanceType"];
+        }
+
+        if (array_key_exists("ExclusiveInstances",$param) and $param["ExclusiveInstances"] !== null) {
+            $this->ExclusiveInstances = [];
+            foreach ($param["ExclusiveInstances"] as $key => $value){
+                $obj = new ExclusiveInstance();
                 $obj->deserialize($value);
-                array_push($this->Content, $obj);
+                array_push($this->ExclusiveInstances, $obj);
             }
-        }
-
-        if (array_key_exists("SpecTotalCount",$param) and $param["SpecTotalCount"] !== null) {
-            $this->SpecTotalCount = $param["SpecTotalCount"];
         }
     }
 }

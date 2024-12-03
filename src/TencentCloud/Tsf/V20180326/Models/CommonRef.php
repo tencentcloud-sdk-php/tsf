@@ -18,23 +18,35 @@ namespace TencentCloud\Tsf\V20180326\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * TSF Envoy网关服务配置
+ * ValueFrom 通用结构
  *
- * @method string getName() 获取服务名称
+ * @method string getName() 获取名称
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setName(string $Name) 设置服务名称
+ * @method void setName(string $Name) 设置名称
+注意：此字段可能返回 null，表示取不到有效值。
+ * @method string getKey() 获取Key值
+注意：此字段可能返回 null，表示取不到有效值。
+ * @method void setKey(string $Key) 设置Key值
 注意：此字段可能返回 null，表示取不到有效值。
  */
-class GatewayConfig extends AbstractModel
+class CommonRef extends AbstractModel
 {
     /**
-     * @var string 服务名称
+     * @var string 名称
 注意：此字段可能返回 null，表示取不到有效值。
      */
     public $Name;
 
     /**
-     * @param string $Name 服务名称
+     * @var string Key值
+注意：此字段可能返回 null，表示取不到有效值。
+     */
+    public $Key;
+
+    /**
+     * @param string $Name 名称
+注意：此字段可能返回 null，表示取不到有效值。
+     * @param string $Key Key值
 注意：此字段可能返回 null，表示取不到有效值。
      */
     function __construct()
@@ -52,6 +64,10 @@ class GatewayConfig extends AbstractModel
         }
         if (array_key_exists("Name",$param) and $param["Name"] !== null) {
             $this->Name = $param["Name"];
+        }
+
+        if (array_key_exists("Key",$param) and $param["Key"] !== null) {
+            $this->Key = $param["Key"];
         }
     }
 }

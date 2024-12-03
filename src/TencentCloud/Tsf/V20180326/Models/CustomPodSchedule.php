@@ -18,23 +18,35 @@ namespace TencentCloud\Tsf\V20180326\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * TSF Envoy网关服务配置
+ * 自定义Pod调度规则
  *
- * @method string getName() 获取服务名称
+ * @method ForceSchedule getForceSchedule() 获取-
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setName(string $Name) 设置服务名称
+ * @method void setForceSchedule(ForceSchedule $ForceSchedule) 设置-
+注意：此字段可能返回 null，表示取不到有效值。
+ * @method TrySchedule getTrySchedule() 获取-
+注意：此字段可能返回 null，表示取不到有效值。
+ * @method void setTrySchedule(TrySchedule $TrySchedule) 设置-
 注意：此字段可能返回 null，表示取不到有效值。
  */
-class GatewayConfig extends AbstractModel
+class CustomPodSchedule extends AbstractModel
 {
     /**
-     * @var string 服务名称
+     * @var ForceSchedule -
 注意：此字段可能返回 null，表示取不到有效值。
      */
-    public $Name;
+    public $ForceSchedule;
 
     /**
-     * @param string $Name 服务名称
+     * @var TrySchedule -
+注意：此字段可能返回 null，表示取不到有效值。
+     */
+    public $TrySchedule;
+
+    /**
+     * @param ForceSchedule $ForceSchedule -
+注意：此字段可能返回 null，表示取不到有效值。
+     * @param TrySchedule $TrySchedule -
 注意：此字段可能返回 null，表示取不到有效值。
      */
     function __construct()
@@ -50,8 +62,14 @@ class GatewayConfig extends AbstractModel
         if ($param === null) {
             return;
         }
-        if (array_key_exists("Name",$param) and $param["Name"] !== null) {
-            $this->Name = $param["Name"];
+        if (array_key_exists("ForceSchedule",$param) and $param["ForceSchedule"] !== null) {
+            $this->ForceSchedule = new ForceSchedule();
+            $this->ForceSchedule->deserialize($param["ForceSchedule"]);
+        }
+
+        if (array_key_exists("TrySchedule",$param) and $param["TrySchedule"] !== null) {
+            $this->TrySchedule = new TrySchedule();
+            $this->TrySchedule->deserialize($param["TrySchedule"]);
         }
     }
 }

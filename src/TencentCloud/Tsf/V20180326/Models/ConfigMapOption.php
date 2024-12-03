@@ -18,47 +18,47 @@ namespace TencentCloud\Tsf\V20180326\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * 应用分页信息
+ * ConfigMap可选项
  *
- * @method integer getTotalCount() 获取应用总数目
+ * @method string getKey() 获取-
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setTotalCount(integer $TotalCount) 设置应用总数目
+ * @method void setKey(string $Key) 设置-
 注意：此字段可能返回 null，表示取不到有效值。
- * @method array getContent() 获取应用信息列表
+ * @method string getPath() 获取-
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setContent(array $Content) 设置应用信息列表
+ * @method void setPath(string $Path) 设置-
 注意：此字段可能返回 null，表示取不到有效值。
- * @method integer getSpecTotalCount() 获取获取部署组实例列表返回的原始批次个数
+ * @method string getMode() 获取-
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setSpecTotalCount(integer $SpecTotalCount) 设置获取部署组实例列表返回的原始批次个数
+ * @method void setMode(string $Mode) 设置-
 注意：此字段可能返回 null，表示取不到有效值。
  */
-class TsfPageApplication extends AbstractModel
+class ConfigMapOption extends AbstractModel
 {
     /**
-     * @var integer 应用总数目
+     * @var string -
 注意：此字段可能返回 null，表示取不到有效值。
      */
-    public $TotalCount;
+    public $Key;
 
     /**
-     * @var array 应用信息列表
+     * @var string -
 注意：此字段可能返回 null，表示取不到有效值。
      */
-    public $Content;
+    public $Path;
 
     /**
-     * @var integer 获取部署组实例列表返回的原始批次个数
+     * @var string -
 注意：此字段可能返回 null，表示取不到有效值。
      */
-    public $SpecTotalCount;
+    public $Mode;
 
     /**
-     * @param integer $TotalCount 应用总数目
+     * @param string $Key -
 注意：此字段可能返回 null，表示取不到有效值。
-     * @param array $Content 应用信息列表
+     * @param string $Path -
 注意：此字段可能返回 null，表示取不到有效值。
-     * @param integer $SpecTotalCount 获取部署组实例列表返回的原始批次个数
+     * @param string $Mode -
 注意：此字段可能返回 null，表示取不到有效值。
      */
     function __construct()
@@ -74,21 +74,16 @@ class TsfPageApplication extends AbstractModel
         if ($param === null) {
             return;
         }
-        if (array_key_exists("TotalCount",$param) and $param["TotalCount"] !== null) {
-            $this->TotalCount = $param["TotalCount"];
+        if (array_key_exists("Key",$param) and $param["Key"] !== null) {
+            $this->Key = $param["Key"];
         }
 
-        if (array_key_exists("Content",$param) and $param["Content"] !== null) {
-            $this->Content = [];
-            foreach ($param["Content"] as $key => $value){
-                $obj = new ApplicationForPage();
-                $obj->deserialize($value);
-                array_push($this->Content, $obj);
-            }
+        if (array_key_exists("Path",$param) and $param["Path"] !== null) {
+            $this->Path = $param["Path"];
         }
 
-        if (array_key_exists("SpecTotalCount",$param) and $param["SpecTotalCount"] !== null) {
-            $this->SpecTotalCount = $param["SpecTotalCount"];
+        if (array_key_exists("Mode",$param) and $param["Mode"] !== null) {
+            $this->Mode = $param["Mode"];
         }
     }
 }
